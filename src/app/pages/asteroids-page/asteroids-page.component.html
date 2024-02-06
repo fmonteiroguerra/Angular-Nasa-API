@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Procure por asteróides com base na data de maior aproximação da Terra</h2>
+<h3> Data <!--Inicial--> : </h3><input type="date" [(ngModel)]="dataInicial" >
+<!-- <h3>Data final : </h3><input type="date" [(ngModel)]="dataFinal" > 
+
+    https://api.nasa.gov/planetary/apod
+
+-->
+<button type="submit" (click)="getData()">Enviar</button> 
+
+<p>Número de resultados: {{asteroidResultCopy.element_count}}</p> 
+
+<h5>apod : {{arrivedApod.explanation}}</h5>
+
+
+<!--
+    
+    <p *ngFor="let cada of asteroidResultCopy" let i>
+dgfd
+fgf
+
+</p> -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-4" *ngFor="let cada of chaves let i" >
+                    
+                        <div class="card">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{cada}} </h5>
+                                    <h5>apod : {{arrivedApod.explanation}}</h5>
+                                    
+                                    <p class="card-text">Número de Asteroids que tiveram maior sua maior aproximação neste dia: {{chaves.length}}</p>
+                                    <a href="#!" class="btn btn-primary">Button</a>
+                                </div>
+                        </div>
+                </div>
+            
+            </div>
+        </div>
+        
+    
+ 
+
+
+
+</body>
+</html>

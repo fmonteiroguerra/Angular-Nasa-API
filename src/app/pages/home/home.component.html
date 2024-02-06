@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+<h2>FOTO ASTRONÓMICA DO DIA </h2><br>
+<p> Todos os dias a NASA divulga uma foto de astronomia feita naquele mesmo dia, sempre com informação ou curiosidade diferente. Experimente:</p><br>
+<h3> Escolha a Data <!--Inicial--> : </h3>
+<div >
+<input type="date" [(ngModel)]="dataInicial">
+</div>
+<!-- <h3>Data final : </h3><input type="date" [(ngModel)]="dataFinal" > 
+
+    https://api.nasa.gov/planetary/apod
+
+-->
+<button type="submit" (click)="getData()">Enviar</button> <br><br>
+
+
+<h1>Título : {{arrivedApod.title}}</h1>
+
+
+<h5>Número de Asteroids que tiveram sua maior aproximação da Terra neste dia: {{asteroidResultCopy.element_count}}</h5> 
+</div>
+
+<div class="col-1" > 
+</div>
+<!--*ngIf="!isApodFound"  Nenhum resultado encontrado para o dia selecionado-->
+<div class="col-7 myCard">
+                        <div class="card" *ngIf="isApodFound">
+                            <img [src]="arrivedApod.url" class="card-img-top" alt="Fissure in Sandstone"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">Date: {{arrivedApod.date}} </h5>
+                                    <h5> Explanation: </h5>
+                                    <p>{{arrivedApod.explanation}}</p>
+                                    <p><strong>Copyright of this photo:</strong> {{arrivedApod.copyright}}</p>
+                                    
+                                
+                                </div>
+                        </div>
+                </div>
+            
+            </div>
+        </div>
+        
+    
+    
+
+
+
+</body>
+</html>

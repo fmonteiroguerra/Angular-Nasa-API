@@ -1,12 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Press+Start+2P&display=swap');
+
+@font-face{
+    font-family: 'madeoutersansbold';
+    src: url(made-outer-sans-bold.otf) format(‘otf’);
+    }
+    
+.header{
+    padding-top: 30vh;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.header h1{
+   width: 600px;
+   align-items: center;
+   text-align: center;
+   margin: auto;
+   font-size: 5em;
+   @media(max-width: 1000px) {
+    font-size: 3em;
+    width: 100%;
+   }
+}
+
+
+.header p{
+    margin: auto;
+    width: 200px;
+    margin-top: 2em;
+ }
+
 body{
-    text-align: left;
+   
     padding-top: 40px;
-    padding-left: 20px;
+    
     background-image: url(../../../assets/back.jpg);
     color: white;
     background-attachment: fixed;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    
     
 }
+
+
 
 .myCard{
     color: black;

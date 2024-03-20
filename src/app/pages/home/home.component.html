@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-<h2>FOTO ASTRONÓMICA DO DIA </h2><br>
-<p> Todos os dias a NASA divulga uma foto de astronomia feita naquele mesmo dia, sempre com informação ou curiosidade diferente. Experimente:</p><br>
-<h3> Escolha a Data <!--Inicial--> : </h3>
-<div >
-<input type="date" [(ngModel)]="dataInicial">
-</div>
-<!-- <h3>Data final : </h3><input type="date" [(ngModel)]="dataFinal" > 
+  </head>
+  <body>
+   
+      
+          <div class="header">
+              <h1>ASTRONOMY PHOTO OF THE DAY</h1>
+              
+              <br />
+              <p>
+                    Every day NASA releases an astronomy photo taken that same day, always with different information or curiosity.
+              </p>
+              <p>
+                Try it!
+          </p>
+              <br />
+              <h3>
+                Choose a date
+                <!--Inicial-->
+                :
+              </h3>
+              <div>
+                <input type="date" [(ngModel)]="dataInicial" />
+              </div>
+              <button class="btn btn-white mt-1" type="submit" (click)="getData()"><strong>Search</strong></button> <br /><br />
+          </div>
 
-    https://api.nasa.gov/planetary/apod
+          <div class="container mt-5">
 
--->
-<button type="submit" (click)="getData()">Enviar</button> <br><br>
+          <h1>Title : {{ arrivedApod.title }}</h1>
 
-
-<h1>Título : {{arrivedApod.title}}</h1>
-
-
-<h5>Número de Asteroids que tiveram sua maior aproximação da Terra neste dia: {{asteroidResultCopy.element_count}}</h5> 
-</div>
-
-<div class="col-1" > 
-</div>
-<!--*ngIf="!isApodFound"  Nenhum resultado encontrado para o dia selecionado-->
-<div class="col-7 myCard">
-                        <div class="card" *ngIf="isApodFound">
-                            <img [src]="arrivedApod.url" class="card-img-top" alt="Fissure in Sandstone"/>
-                                <div class="card-body">
-                                    <h5 class="card-title">Date: {{arrivedApod.date}} </h5>
-                                    <h5> Explanation: </h5>
-                                    <p>{{arrivedApod.explanation}}</p>
-                                    <p><strong>Copyright of this photo:</strong> {{arrivedApod.copyright}}</p>
-                                    
-                                
-                                </div>
-                        </div>
-                </div>
-            
-            </div>
-        </div>
+          <h5>
+            Number of Asteroids that had their closest approach to Earth on this day: {{ asteroidResultCopy.element_count }}
+          </h5>
         
-    
-    
 
-
-
-</body>
+        <div class="col-1"></div>
+        <!--*ngIf="!isApodFound"  Nenhum resultado encontrado para o dia selecionado-->
+        <div class="col-12 myCard mb-4">
+          <div class="card" *ngIf="isApodFound">
+            <img
+              [src]="arrivedApod.url"
+              class="card-img-top"
+              alt="Fissure in Sandstone"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Date: {{ arrivedApod.date }}</h5>
+              <h5>Explanation:</h5>
+              <p>{{ arrivedApod.explanation }}</p>
+              <p>
+                <strong>Copyright of this photo:</strong>
+                {{ arrivedApod.copyright }}
+              </p>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+    <app-footer></app-footer>
+  </body>
 </html>
